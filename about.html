@@ -9,7 +9,15 @@
       content="Learn the story behind DSP Forge, Amazon DSP software created by a dispatcher after four years of solving hours, schedule, and attendance problems firsthand."
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="lightbox.js" defer></script>
   </head>
+  <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <span class="lightbox-close">&times;</span>
+      <img id="lightbox-img" class="lightbox-content" src="" alt="">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
   <body>
     <header class="site-header">
       <div class="container nav">
@@ -82,11 +90,11 @@
               <li>Stay flexible enough to build custom workflows as needs evolve.</li>
             </ul>
           </article>
-          <article class="screenshot-card">
+          <article class="screenshot-card" onclick="openLightbox('assets/dashboard.png', 'Built from the ground up for daily ops — the interface reflects real dispatch priorities: clarity, speed, and fewer moving parts.')">
             <img src="assets/dashboard.png" alt="Dashboard screenshot" />
             <div class="content">
               <h3>Built from the ground up for daily ops</h3>
-              <p>The interface reflects real dispatch priorities: clarity, speed, and fewer moving parts.</p>
+              <p>The interface reflects real dispatch priorities: clarity, speed, and fewer moving parts. <span class="click-hint">Click to expand</span></p>
             </div>
           </article>
         </div>
