@@ -9,7 +9,15 @@
       content="Explore DSP Forge features for Amazon DSP operations: hours tracking, DOT alerts, schedule planning, attendance reporting, offline support, and custom development."
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="lightbox.js" defer></script>
   </head>
+  <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <span class="lightbox-close">&times;</span>
+      <img id="lightbox-img" class="lightbox-content" src="" alt="">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
   <body>
     <header class="site-header">
       <div class="container nav">
@@ -102,11 +110,11 @@
               <li>Attendance and export-ready reporting</li>
             </ul>
           </div>
-          <article class="screenshot-card">
+          <article class="screenshot-card" onclick="openLightbox('assets/schedule.png', 'Schedule builder — Two-week planning designed for dispatchers who need to move fast when coverage changes.')">
             <img src="assets/schedule.png" alt="Schedule builder screenshot" />
             <div class="content">
               <h3>Schedule builder</h3>
-              <p>Two-week planning designed for dispatchers who need to move fast when coverage changes.</p>
+              <p>Two-week planning designed for dispatchers who need to move fast when coverage changes. <span class="click-hint">Click to expand</span></p>
             </div>
           </article>
         </div>
@@ -114,32 +122,32 @@
 
       <section class="section">
         <div class="container screenshot-grid">
-          <article class="screenshot-card">
+          <article class="screenshot-card" onclick="openLightbox('assets/dashboard.png', 'Dashboard — Fast visibility into the day, driver status, and action items.')">
             <img src="assets/dashboard.png" alt="Dashboard screenshot" />
             <div class="content">
               <h3>Dashboard</h3>
-              <p>Fast visibility into the day, driver status, and action items.</p>
+              <p>Fast visibility into the day, driver status, and action items. <span class="click-hint">Click to expand</span></p>
             </div>
           </article>
-          <article class="screenshot-card">
+          <article class="screenshot-card" onclick="openLightbox('assets/hours-report.png', 'Hours report — Review weekly totals, fix issues quickly, and stay ahead of labor problems.')">
             <img src="assets/hours-report.png" alt="Hours report screenshot" />
             <div class="content">
               <h3>Hours report</h3>
-              <p>Review weekly totals, fix issues quickly, and stay ahead of labor problems.</p>
+              <p>Review weekly totals, fix issues quickly, and stay ahead of labor problems. <span class="click-hint">Click to expand</span></p>
             </div>
           </article>
-          <article class="screenshot-card">
+          <article class="screenshot-card" onclick="openLightbox('assets/attendance.png', 'Attendance reporting — See patterns and follow through with clean reporting instead of manual rollups.')">
             <img src="assets/attendance.png" alt="Attendance report screenshot" />
             <div class="content">
               <h3>Attendance reporting</h3>
-              <p>See patterns and follow through with clean reporting instead of manual rollups.</p>
+              <p>See patterns and follow through with clean reporting instead of manual rollups. <span class="click-hint">Click to expand</span></p>
             </div>
           </article>
-          <article class="screenshot-card">
+          <article class="screenshot-card" onclick="openLightbox('assets/login.png', 'Simple access — Clean, fast access for teams that do not have time for bloated software.')">
             <img src="assets/login.png" alt="Login screenshot" />
             <div class="content">
               <h3>Simple access</h3>
-              <p>Clean, fast access for teams that do not have time for bloated software.</p>
+              <p>Clean, fast access for teams that do not have time for bloated software. <span class="click-hint">Click to expand</span></p>
             </div>
           </article>
         </div>
