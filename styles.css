@@ -557,3 +557,119 @@ textarea:focus {
     width: min(calc(100% - 1.25rem), var(--container));
   }
 }
+
+/* Larger Screenshot Grid */
+.screenshot-grid-large {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.screenshot-card-large {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.screenshot-card-large:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.screenshot-card-large img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+
+.screenshot-card-large .content {
+  padding: 1.25rem;
+}
+
+.screenshot-card-large h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.screenshot-card-large p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.click-hint {
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+}
+
+/* Lightbox Modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(7, 17, 31, 0.95);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: var(--text);
+  font-size: 40px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.2s;
+  z-index: 1001;
+}
+
+.lightbox-close:hover {
+  color: var(--accent);
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-soft);
+  font-size: 1rem;
+  text-align: center;
+  max-width: 80%;
+}
+
+@media (max-width: 960px) {
+  .screenshot-grid-large {
+    grid-template-columns: 1fr;
+  }
+}

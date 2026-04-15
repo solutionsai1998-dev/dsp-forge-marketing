@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <span class="lightbox-close">&times;</span>
+      <img id="lightbox-img" class="lightbox-content" src="" alt="">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
     <header class="site-header">
       <div class="container nav">
         <a class="brand" href="index.html">
@@ -124,33 +131,33 @@
               good in a generic SaaS template.
             </p>
           </div>
-          <div class="screenshot-grid">
-            <article class="screenshot-card">
+          <div class="screenshot-grid-large">
+            <article class="screenshot-card-large" onclick="openLightbox('assets/dashboard.png', 'Dashboard - See driver status, morning coverage, and key issues at a glance.')">
               <img src="assets/dashboard.png" alt="DSP Forge dashboard screenshot" />
               <div class="content">
                 <h3>Dashboard</h3>
-                <p>See driver status, morning coverage, and key issues at a glance.</p>
+                <p>See driver status, morning coverage, and key issues at a glance. <span class="click-hint">Click to expand</span></p>
               </div>
             </article>
-            <article class="screenshot-card">
+            <article class="screenshot-card-large" onclick="openLightbox('assets/schedule.png', 'Schedule Builder - Plan two weeks ahead and make changes fast when the board shifts.')">
               <img src="assets/schedule.png" alt="DSP Forge schedule builder screenshot" />
               <div class="content">
                 <h3>Schedule builder</h3>
-                <p>Plan two weeks ahead and make changes fast when the board shifts.</p>
+                <p>Plan two weeks ahead and make changes fast when the board shifts. <span class="click-hint">Click to expand</span></p>
               </div>
             </article>
-            <article class="screenshot-card">
+            <article class="screenshot-card-large" onclick="openLightbox('assets/attendance.png', 'Attendance Report - Track reliability, callouts, and repeat issues without manual rollups.')">
               <img src="assets/attendance.png" alt="DSP Forge attendance report screenshot" />
               <div class="content">
                 <h3>Attendance reporting</h3>
-                <p>Track reliability, callouts, and repeat issues without manual rollups.</p>
+                <p>Track reliability, callouts, and repeat issues without manual rollups. <span class="click-hint">Click to expand</span></p>
               </div>
             </article>
-            <article class="screenshot-card">
+            <article class="screenshot-card-large" onclick="openLightbox('assets/hours-report.png', 'Hours Report - Catch overtime, review weekly totals, and keep labor decisions grounded in real data.')">
               <img src="assets/hours-report.png" alt="DSP Forge hours report screenshot" />
               <div class="content">
                 <h3>Hours reporting</h3>
-                <p>Catch overtime, review weekly totals, and keep labor decisions grounded in real data.</p>
+                <p>Catch overtime, review weekly totals, and keep labor decisions grounded in real data. <span class="click-hint">Click to expand</span></p>
               </div>
             </article>
           </div>
@@ -265,5 +272,24 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      function openLightbox(src, caption) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox-caption').textContent = caption;
+        document.getElementById('lightbox').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    </script>
   </body>
 </html>
